@@ -157,7 +157,7 @@ const makeBuddies = () => {
 const leaveTheShire = () => {
 
   // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
-  let $hobbitses = $('#hobbit-list').children();
+  let $hobbitses = $('#The-Shire ul');
   $('#Rivendell').append($hobbitses);
   // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
 
@@ -173,7 +173,6 @@ const beautifulStranger = () => {
 
   // 1. change the buddy 'Strider' textnode to "Aragorn"
   $("aside ul li").eq(3).text("Aragorn");
-
   // hint: You can get a list of elements by tag name, such as 'aside'
 
 };
@@ -187,13 +186,16 @@ const beautifulStranger = () => {
 const forgeTheFellowShip = () => {
 
   // 1. create a new div with an id 'the-fellowship'
-
+  let $fellowDiv = $("<div>",{id:"the-fellowship"});
   // 2. add an h1 with the text 'The Fellowship' to this new div
-
+  let $fellowH1 = $("<h1>");
   // 3. append the fellowship to middle-earth
-
+  $("#middle-earth").append($fellowDiv);
+  $("#the-fellowship").append($fellowH1);
+  $fellowH1.append("The Fellowship");
   // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
-
+  let $rivenList = $('#Rivendell ul');
+  $("#the-fellowship").append($rivenList);
 };
 
 // COMMIT YOUR WORK
